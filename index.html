@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>ADS-B</title>
+
+		<meta name="description" content=">ADS-B">
+		<meta name="author" content="Wouter Vandenneucker">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2>Automatic Dependent Surveillance-Broadcast</h2>
+					<small>By Wouter Vandenneucker</small>
+				</section>
+
+				<section>
+					<h2>What is ADS-B ?</h2>
+					<p class="fragment">Systeem voor delen van info tussen vliegtuige & grondstations<p>
+				</section>
+
+				<section>
+					<p>Vliegtuig stuurt ondermeer:</p>
+					<ul>
+						<li>GPS positie</li>
+						<li>Registratienummer</li>
+						<li>Vluchtnummer</li>
+						<li>Snelheid</li>
+						<li>Hoogte</li>
+						<li>Koers</li>
+						<li>Intenties</li>
+					</ul>
+				</section>
+
+				<section>
+					<img src="img/ADS-B1.jpg" />
+				</section>
+
+
+				<section>
+					<h3>ADS-B in vs ADS-B out</h3>
+					<p class="fragment">ADS-B in: FIS, TIS, NOTAM, Weather</p>
+				</section>
+
+				<section>
+					<h2>Waarom ADS-B?</h2>
+					<h3>Geschiedenis</h3>
+				</section>
+
+				<section>
+					<h3>Radar</h3>
+					<img style="max-width: 40%;" src="img/Radar-hatzerim-1-1.jpg">
+				</section>
+
+				<section>
+					<h3>Primaire radar vs Secundaire radar</h3>
+				</section>
+
+				<section>
+					<h3>Secundaire radar</h3>
+					<p>vroeger "on demand",<br/>tegenwoordig ook "broadcast" (Mode S)</p>
+				</section>
+
+				<section>
+					<h3>What's next?</h3>
+				</section>
+
+				<section>
+					<h2>Hoe werkt ADS-B?</h2>
+				</section>
+
+				<section>
+					<ul>
+						<li>OSI layer 4 (transport)</li>
+						<li>3 varianten: 1090ES, UAT, VDL</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>To "Squit" on 1090 ES</h3>
+					<img style="max-width: 60%" src="img/squid-wallpaper-4.jpg" />
+				</section>
+				<section>
+					<p>Mode S transponder with Extended Message</p>
+				</section>
+
+				<section>
+					<img src="img/fig10.jpg" />
+				</section>
+
+				<section>
+					<img src="img/2ijs27b.jpg" />
+				</section>
+
+				<section>
+					<h3>Secundary Mode S Radar Message</h3>
+					<img src="img/secrad.png" />
+					<br/>
+					<img src="img/secRadExt.png"/>
+				</section>
+
+				<section>
+					<img src="img/posSquid.png"/>
+				</section>
+
+				<section>
+					<img src="img/otherSquits.png" />
+				</section>
+
+				<section>
+					<img src="img/messages.png" />
+				</section>
+
+				<section>
+					<img src="img/webpiaware-35.jpg" />
+				</section>
+
+				<section>
+					<h2>DEMO</h2>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
